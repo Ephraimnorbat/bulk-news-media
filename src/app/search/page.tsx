@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { searchStories } from "@/lib/api/stories";
 
 export const metadata = { title: "Search" };
 
-export default async function SearchPage({
+// 1. Create a separate component that handles the async searchParams and data fetching
+async function SearchResults({
   searchParams,
 }: {
   searchParams: Promise<{ q?: string }>;
@@ -12,8 +14,7 @@ export default async function SearchPage({
   const results = q ? await searchStories(q) : [];
 
   return (
-    <section className="rounded-[28px] border border-[color:var(--line)] bg-[color:var(--surface)] p-6 sm:p-8">
-      <h1 className="font-serif text-4xl">Search</h1>
+    <>
       <form className="mt-6">
         <input
           name="q"
@@ -37,6 +38,22 @@ export default async function SearchPage({
           <li className="text-[color:var(--muted)]">No matching stories yet.</li>
         ) : null}
       </ul>
+    </>
+  );
+}
+
+// 2. The main page component wraps the search results in a Suspense boundary
+export default function SearchPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  return (
+    <section className="rounded-[28px] border border-[color:var(--line)] bg-[color:var(--surface)] p-6 sm:p-8">
+      <h1 className="font-serif text-4xl">Search</h1>
+      <Suspense fallback={<div className="mt-8 text-[color:var(--muted)]">Loading search...</div>}>
+        <SearchResults searchParams={searchParams} />
+      </Suspense>
     </section>
   );
 }
