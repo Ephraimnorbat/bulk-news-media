@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  /* ─────────────────────────────
+     BACKGROUNDS
+     ───────────────────────────── */
+
+  --page: #0A1616;
+  --header: #0D1D1C;
+  --surface: #112422;
+  --chip: #192E2C;
+
+
+  /* ─────────────────────────────
+     TYPOGRAPHY
+     ───────────────────────────── */
+
+  --cream: #F4F7F4;
+  --cream-dim: #D6E0DC;
+  --muted: #A3B2AE;
+
+
+  /* ─────────────────────────────
+     BRAND ACCENTS
+     ───────────────────────────── */
+
+  --primary: #6B7F7E;
+  --on-primary: #050B0B;
+  --primary-dark: #4D6261;
+  --primary-deep: #344947;
+  --primary-light: #9BAEAB;
+  --primary-pale: #C8D4D1;
+
+
+  /* ─────────────────────────────
+     STATUS
+     ───────────────────────────── */
+
+  --live: #3FD07A;
+
+
+  /* ─────────────────────────────
+     BORDERS
+     ───────────────────────────── */
+
+  --line: #263D3B;
+  --line-strong: #405A57;
+  --card-edge: #334D4A;
+}
+
+@theme inline {
+  --color-background: var(--page);
+  --color-foreground: var(--cream);
+  --font-sans: var(--font-source-sans);
+  --font-serif: var(--font-newsreader);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--page);
+  color: var(--cream);
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--primary-light) 40%, transparent);
+}
