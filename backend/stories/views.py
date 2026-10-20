@@ -11,6 +11,12 @@ class StoryViewSet(viewsets.ReadOnlyModelViewSet):
     lookup_field = "slug"
     filter_backends = [filters.SearchFilter]
     search_fields = ["title", "excerpt", "body", "author"]
+    def get_queryset(self):
+        queryset = Story.objects.all()
+        category = self.request.query_params.get("category")
+        if category in dict(Story.CATEGORY_CHOICES):
+            queryset = queryset.filter(category=category)
+        return queryset
     @action(detail=False, methods=["get"])
     def featured(self, request):
         return Response(self.get_serializer(self.get_queryset().filter(featured=True)[:1], many=True).data)

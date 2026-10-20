@@ -122,7 +122,7 @@ export async function HomeDesk() {
               ON THE DESK NOW
             </p>
             <Link href="/stories" className="text-[12px] text-[color:var(--live)]">
-              All live stories →
+              All live news →
             </Link>
           </div>
           <div className="grid gap-3 sm:grid-cols-3">
@@ -139,7 +139,7 @@ export async function HomeDesk() {
               RISING RIGHT NOW
             </p>
             <Link href="/stories" className="text-[12px] text-[color:var(--muted)]">
-              See all →
+              See all news →
             </Link>
           </div>
           <ol className="space-y-4">

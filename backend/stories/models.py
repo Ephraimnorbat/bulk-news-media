@@ -3,7 +3,15 @@ from django.db import models
 from django.utils.text import slugify
 
 class Story(models.Model):
+    CATEGORY_CHOICES = [
+        ("news", "News"),
+        ("opinion", "Opinion"),
+        ("court_case", "Court Case"),
+        ("photo_story", "Photo Story"),
+        ("interview", "Interview"),
+    ]
     STATUS_CHOICES = [(v, v.title()) for v in ("developing", "live", "update", "standard")]
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default="news", db_index=True)
     title = models.CharField(max_length=240)
     slug = models.SlugField(max_length=260, unique=True, blank=True)
     excerpt = models.TextField(blank=True)

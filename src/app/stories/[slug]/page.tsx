@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getStory } from "@/lib/api/stories";
 import { formatDeskDate } from "@/lib/format";
 
-export const metadata = { title: "Story" };
+export const metadata = { title: "News" };
 
 export default function StoryPage({ params }: { params: Promise<{ slug: string }> }) {
   return (
@@ -26,7 +26,7 @@ async function StoryContent({ params }: { params: Promise<{ slug: string }> }) {
           {story.kicker}
         </p>
       ) : (
-        <p className="text-[10px] font-semibold tracking-[0.22em] text-[color:var(--primary-light)]">STORY</p>
+        <p className="text-[10px] font-semibold tracking-[0.22em] text-[color:var(--primary-light)]">{categoryLabel(story.category)}</p>
       )}
       <h1 className="mt-3 max-w-3xl font-serif text-4xl leading-tight text-[color:var(--cream)]">
         {story.title}
@@ -52,6 +52,17 @@ async function StoryContent({ params }: { params: Promise<{ slug: string }> }) {
       </p>
     </article>
   );
+}
+
+function categoryLabel(category?: string) {
+  const labels: Record<string, string> = {
+    news: "NEWS",
+    opinion: "OPINION",
+    court_case: "COURT CASE",
+    photo_story: "PHOTO STORY",
+    interview: "INTERVIEW",
+  };
+  return labels[category ?? "news"] ?? "NEWS";
 }
 
 function StoryFallback() {

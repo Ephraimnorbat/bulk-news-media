@@ -25,6 +25,17 @@ export function getDeskStories() {
   return safeGet(ENDPOINTS.desk, mockDesk);
 }
 
+export async function getStories(category: string): Promise<Story[]> {
+  try {
+    const { data } = await api.get<Paginated<Story> | Story[]>(ENDPOINTS.stories, {
+      params: { category },
+    });
+    return unwrap(data);
+  } catch {
+    return [];
+  }
+}
+
 export function getRisingStories() {
   return safeGet(ENDPOINTS.rising, mockRising);
 }

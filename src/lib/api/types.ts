@@ -4,6 +4,7 @@ export type Story = {
   id: string | number;
   slug: string;
   title: string;
+  category?: "news" | "opinion" | "court_case" | "photo_story" | "interview";
   excerpt: string;
   body?: string;
   image?: string | null;

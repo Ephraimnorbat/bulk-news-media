@@ -2,11 +2,15 @@ import Link from "next/link";
 
 export const navItems = [
   { href: "/", label: "Home", hint: "Latest reporting" },
-  { href: "/stories", label: "Stories", hint: "Developing & live coverage" },
+  { href: "/stories", label: "News", hint: "Latest news and live coverage" },
+  { href: "/opinions", label: "Opinion", hint: "Commentary and viewpoints" },
+  { href: "/court-cases", label: "Court Cases", hint: "Cases and legal proceedings" },
+  { href: "/photo-stories", label: "Photo Stories", hint: "Stories told through photos" },
+  { href: "/interviews", label: "Interviews", hint: "Conversations and profiles" },
   { href: "/videos", label: "Videos", hint: "Raw clips" },
   { href: "/media", label: "Media", hint: "Photos, audio, documents" },
   { href: "/topics", label: "Topics", hint: "Browse by subject" },
-  { href: "/stories?sort=trending", label: "Trending", hint: "Most-read stories" },
+  { href: "/stories?sort=trending", label: "Trending", hint: "Most-read news" },
   { href: "/search", label: "Search", hint: "Find people and cases" },
   { href: "/tips", label: "Tips", hint: "Send evidence" },
   { href: "/blog", label: "Blog", hint: "Analysis and columns" },
@@ -21,7 +25,7 @@ export function Sidebar() {
             {navItems.map((item) => (
               <li key={item.href + item.label}>
                 <Link href={item.href} className="block group">
-                  <div className="font-serif text-[15px] text-[color:var(--cream)] group-hover:text-white">
+                  <div className="font-serif text-[15px] text-[color:var(--cream)] group-hover:underline">
                     {item.label}
                   </div>
                   <div className="text-[11px] leading-tight text-[color:var(--muted)]">{item.hint}</div>
@@ -33,16 +37,16 @@ export function Sidebar() {
 
         <div className="rounded-[28px] border border-[color:var(--line)] bg-[color:var(--surface)] px-5 py-5">
           <p className="text-[10px] font-semibold tracking-[0.18em] text-[color:var(--muted)]">
-            TRACK THE STORY
+            TRACK THE NEWS
           </p>
           <p className="mt-3 text-[13px] leading-5 text-[color:var(--cream-dim)]">
-            Stories keep every update, document, video, and correction in one place.
+            News coverage brings updates, documents, video, and corrections together.
           </p>
           <Link
             href="/stories"
             className="mt-4 inline-flex text-[13px] font-medium text-[color:var(--cream)] underline decoration-[color:var(--muted)] underline-offset-4"
           >
-            Open live stories
+            Open latest news
           </Link>
         </div>
       </div>

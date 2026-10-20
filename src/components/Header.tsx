@@ -92,7 +92,7 @@ export function Header() {
           </button>
 
           <Link href="/stories" className="hidden px-2 py-1 hover:text-[color:var(--cream)] lg:inline">
-            Stories
+            News
           </Link>
           <Link href="/send-a-lead" className="hidden px-2 py-1 hover:text-[color:var(--cream)] lg:inline">
             Send a lead
