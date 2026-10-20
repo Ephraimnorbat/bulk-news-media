@@ -39,3 +39,38 @@ class Story(models.Model):
         super().save(*args, **kwargs)
     def __str__(self):
         return self.title
+
+
+class News(Story):
+    class Meta:
+        proxy = True
+        verbose_name = "News item"
+        verbose_name_plural = "News"
+
+
+class Opinion(Story):
+    class Meta:
+        proxy = True
+        verbose_name = "Opinion"
+        verbose_name_plural = "Opinions"
+
+
+class CourtCase(Story):
+    class Meta:
+        proxy = True
+        verbose_name = "Court case"
+        verbose_name_plural = "Court cases"
+
+
+class PhotoStory(Story):
+    class Meta:
+        proxy = True
+        verbose_name = "Photo story"
+        verbose_name_plural = "Photo stories"
+
+
+class Interview(Story):
+    class Meta:
+        proxy = True
+        verbose_name = "Interview"
+        verbose_name_plural = "Interviews"

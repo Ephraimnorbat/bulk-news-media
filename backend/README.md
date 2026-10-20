@@ -12,7 +12,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-The API runs at `http://127.0.0.1:8000/api/`; Django admin is at `/admin/`. Add content through the admin site. SQLite is stored in `backend/db.sqlite3`. News and category entries are managed in Django admin under **Stories**. Select News, Opinion, Court Case, Photo Story, or Interview, then enter the displayed author name, excerpt/body, and optional image. Opinion pieces are added by staff in admin; they are not public submissions. Story images, video thumbnails, and media files are uploaded through admin forms and stored under `backend/media/` during local development.
+The API runs at `http://127.0.0.1:8000/api/`; Django admin is at `/admin/`. Add content through the admin site. SQLite is stored in `backend/db.sqlite3`. After applying migrations, the admin sidebar shows separate **News**, **Opinions**, **Court cases**, **Photo stories**, and **Interviews** sections, plus the combined **Stories** section. Each category section only lists and creates entries for that category. Enter the displayed author name, excerpt/body, and optional image. Opinion pieces are added by staff in admin; they are not public submissions. Story images, video thumbnails, and media files are uploaded through admin forms and stored under `backend/media/` during local development.
 
 Set `NEXT_PUBLIC_API_URL=http://127.0.0.1:8000/api` in the frontend `.env.local` when using a non-default API URL. CORS allows localhost ports 3000 by default.
 
