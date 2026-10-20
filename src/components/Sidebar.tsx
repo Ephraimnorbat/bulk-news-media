@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const nav = [
+export const navItems = [
   { href: "/", label: "Home", hint: "Latest reporting" },
   { href: "/stories", label: "Stories", hint: "Developing & live coverage" },
   { href: "/videos", label: "Videos", hint: "Raw clips" },
@@ -18,7 +18,7 @@ export function Sidebar() {
       <div className="sticky top-[84px] space-y-4">
         <nav className="rounded-[28px] border border-[color:var(--line)] bg-[color:var(--surface)] px-5 py-5">
           <ul className="space-y-4">
-            {nav.map((item) => (
+            {navItems.map((item) => (
               <li key={item.href + item.label}>
                 <Link href={item.href} className="block group">
                   <div className="font-serif text-[15px] text-[color:var(--cream)] group-hover:text-white">
