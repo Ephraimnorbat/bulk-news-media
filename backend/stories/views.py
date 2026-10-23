@@ -1,6 +1,7 @@
 from django.db.models import Q
 from rest_framework import filters, viewsets
 from rest_framework.decorators import action
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from .models import Story
 from .serializers import StorySerializer
@@ -35,3 +36,7 @@ class StoryViewSet(viewsets.ReadOnlyModelViewSet):
         query = request.query_params.get("q", "")
         items = self.get_queryset().filter(Q(title__icontains=query) | Q(excerpt__icontains=query) | Q(body__icontains=query) | Q(author__icontains=query)) if query else self.get_queryset().none()
         return Response(self.get_serializer(items, many=True).data)
+    # --- KEEP-ALIVE PING ENDPOINT ---
+    @action(detail=False, methods=["get"], permission_classes=[AllowAny])
+    def ping(self, request):
+        return Response({"status": "alive", "message": "Server is active"})
