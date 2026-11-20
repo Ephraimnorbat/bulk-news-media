@@ -35,13 +35,13 @@ async function StoryContent({ params }: { params: Promise<{ slug: string }> }) {
         {story.author} · {formatDeskDate(story.published_at)}
       </p>
       {story.image ? (
-        <div className="relative mt-7 aspect-[16/9] max-h-[560px] overflow-hidden rounded-2xl">
+        <div className="relative mt-7 aspect-[16/9] max-h-[560px] overflow-hidden rounded-2xl bg-[color:var(--chip)]">
           <Image
             src={story.image}
             alt={story.title}
             fill
             sizes="(max-width: 768px) 100vw, 900px"
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.02] motion-reduce:transition-none"
+            className="object-contain"
             unoptimized
             priority
           />

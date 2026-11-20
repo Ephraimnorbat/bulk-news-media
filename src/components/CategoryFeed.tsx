@@ -33,7 +33,7 @@ async function CategoryStories({ category, title, description }: { category: str
               </div>
               {story.image ? (
                 <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-[color:var(--chip)]">
-                  <Image src={story.image} alt={story.title} fill sizes="(max-width: 640px) 100vw, 220px" className="object-cover" unoptimized />
+                  <Image src={story.image} alt={story.title} fill sizes="(max-width: 640px) 100vw, 220px" className="object-contain" unoptimized />
                 </div>
               ) : null}
             </Link>

@@ -38,7 +38,7 @@ async function BlogPosts() {
                     alt={post.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
+                    className="object-contain"
                     unoptimized
                   />
                 </div>

@@ -34,12 +34,12 @@ function Featured({ story }: { story: Story }) {
           </div>
         </div>
         {story.image ? (
-          <Link href={`/stories/${story.slug}`} className="group/image relative block h-[180px] overflow-hidden rounded-2xl sm:h-[210px]">
+          <Link href={`/stories/${story.slug}`} className="group/image relative block h-[180px] overflow-hidden rounded-2xl bg-[color:var(--chip)] sm:h-[210px]">
             <Image
               src={story.image}
               alt={story.title}
               fill
-              className="object-cover transition-transform duration-500 group-hover/image:scale-105 motion-reduce:transition-none"
+              className="object-contain"
               unoptimized
               sizes="(max-width: 1024px) 100vw, 360px"
               priority

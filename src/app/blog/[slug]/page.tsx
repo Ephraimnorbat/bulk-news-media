@@ -30,7 +30,7 @@ async function BlogPostContent({ params }: { params: Promise<{ slug: string }> }
             alt={post.title}
             fill
             sizes="(max-width: 768px) 100vw, 900px"
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.02] motion-reduce:transition-none"
+            className="object-contain"
             unoptimized
             priority
           />
