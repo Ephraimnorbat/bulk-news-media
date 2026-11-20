@@ -20,7 +20,7 @@ async function StoryContent({ params }: { params: Promise<{ slug: string }> }) {
   if (!story) notFound();
 
   return (
-    <article className="group rounded-[28px] border border-[color:var(--card-edge)] bg-[color:var(--surface)] p-6 transition duration-300 hover:border-[color:var(--line-strong)] hover:shadow-xl motion-reduce:transition-none sm:p-10">
+    <article className="group rounded-[24px] border border-[color:var(--card-edge)] bg-[color:var(--surface)] p-4 transition duration-300 hover:border-[color:var(--line-strong)] hover:shadow-xl motion-reduce:transition-none sm:rounded-[28px] sm:p-10">
       {story.kicker ? (
         <p className="text-[10px] font-semibold tracking-[0.22em] text-[color:var(--muted)]">
           {story.kicker}
@@ -28,14 +28,14 @@ async function StoryContent({ params }: { params: Promise<{ slug: string }> }) {
       ) : (
         <p className="text-[10px] font-semibold tracking-[0.22em] text-[color:var(--primary-light)]">{categoryLabel(story.category)}</p>
       )}
-      <h1 className="mt-3 max-w-3xl font-serif text-4xl leading-tight text-[color:var(--cream)]">
+      <h1 className="mt-3 max-w-3xl font-serif text-3xl leading-[1.12] text-[color:var(--cream)] sm:text-4xl sm:leading-tight">
         {story.title}
       </h1>
       <p className="mt-4 text-sm text-[color:var(--muted)]">
         {story.author} · {formatDeskDate(story.published_at)}
       </p>
       {story.image ? (
-        <div className="relative mt-7 aspect-[16/9] max-h-[560px] overflow-hidden rounded-2xl bg-[color:var(--chip)]">
+        <div className="relative mt-6 aspect-[4/5] max-h-[440px] overflow-hidden rounded-2xl bg-[color:var(--chip)] sm:mt-7 sm:aspect-[16/9] sm:max-h-[560px]">
           <Image
             src={story.image}
             alt={story.title}
@@ -47,7 +47,7 @@ async function StoryContent({ params }: { params: Promise<{ slug: string }> }) {
           />
         </div>
       ) : null}
-      <p className="mt-8 max-w-2xl text-lg leading-8 text-[color:var(--cream-dim)]">
+      <p className="mt-6 max-w-2xl text-base leading-7 text-[color:var(--cream-dim)] sm:mt-8 sm:text-lg sm:leading-8">
         {story.body ?? story.excerpt}
       </p>
     </article>

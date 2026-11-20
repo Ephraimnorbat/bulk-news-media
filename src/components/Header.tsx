@@ -41,7 +41,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-[color:var(--line)] bg-[color:var(--header)]">
-      <div className="mx-auto flex h-[64px] max-w-[1440px] items-center gap-4 px-4 lg:px-6">
+      <div className="mx-auto flex h-[60px] max-w-[1440px] items-center gap-2 px-3 sm:h-[64px] sm:gap-4 sm:px-4 lg:px-6">
         <button
           type="button"
           className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[color:var(--line-strong)] lg:hidden"
@@ -54,10 +54,10 @@ export function Header() {
             <path d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-        <Link href="/" className="flex min-w-0 items-center gap-3">
-          <QuillIcon className="h-8 w-8 shrink-0 text-[color:var(--cream)]" />
-          <span className="leading-tight">
-            <span className="font-serif text-[22px] font-semibold tracking-tight text-[color:var(--cream)]">
+        <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
+          <QuillIcon className="h-7 w-7 shrink-0 text-[color:var(--cream)] sm:h-8 sm:w-8" />
+          <span className="min-w-0 leading-tight">
+            <span className="whitespace-nowrap font-serif text-[18px] font-semibold tracking-tight text-[color:var(--cream)] sm:text-[22px]">
               BulkNewsMedia
             </span>
             <span className="mt-0.5 hidden text-[9px] font-semibold tracking-[0.22em] text-[color:var(--muted)] sm:block">
@@ -66,7 +66,7 @@ export function Header() {
           </span>
         </Link>
 
-        <div className="ml-auto flex items-center gap-2 text-[13px] text-[color:var(--cream-dim)]">
+        <div className="ml-auto flex shrink-0 items-center gap-1.5 text-[13px] text-[color:var(--cream-dim)] sm:gap-2">
           <form
             onSubmit={onSearch}
             className="hidden items-center gap-2 rounded-full border border-[color:var(--line-strong)] bg-[color:var(--page)] px-3 py-1.5 md:flex"
@@ -85,7 +85,7 @@ export function Header() {
 
           <button
             type="button"
-            className="grid h-9 w-9 place-items-center rounded-full border border-[color:var(--line-strong)]"
+            className="hidden h-9 w-9 shrink-0 place-items-center rounded-full border border-[color:var(--line-strong)] sm:grid"
             aria-label="Theme"
           >
             <MoonIcon className="h-4 w-4" />
@@ -114,7 +114,7 @@ export function Header() {
               </Link>
               <Link
                 href="/signup"
-                className="rounded-full bg-[color:var(--primary)] hover:bg-[color:var(--primary-light)] px-4 py-1.5 text-[13px] font-medium text-[color:var(--on-primary)]"
+                className="shrink-0 whitespace-nowrap rounded-full bg-[color:var(--primary)] px-3 py-2 text-[12px] font-medium text-[color:var(--on-primary)] hover:bg-[color:var(--primary-light)] sm:px-4 sm:py-1.5 sm:text-[13px]"
               >
                 Sign up
               </Link>

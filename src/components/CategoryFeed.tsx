@@ -18,16 +18,16 @@ export function CategoryFeed({
 async function CategoryStories({ category, title, description }: { category: string; title: string; description: string }) {
   const stories = await getStories(category);
   return (
-    <section className="rounded-[28px] border border-[color:var(--line)] bg-[color:var(--surface)] p-6 sm:p-8">
+    <section className="rounded-[24px] border border-[color:var(--line)] bg-[color:var(--surface)] p-4 sm:rounded-[28px] sm:p-8">
       <p className="text-[10px] font-semibold tracking-[0.22em] text-[color:var(--muted)]">BULK NEWS MEDIA</p>
-      <h1 className="mt-2 font-serif text-4xl text-[color:var(--cream)]">{title}</h1>
+      <h1 className="mt-2 font-serif text-3xl text-[color:var(--cream)] sm:text-4xl">{title}</h1>
       <p className="mt-2 text-sm text-[color:var(--muted)]">{description}</p>
       <ul className="mt-7 divide-y divide-[color:var(--line)]">
         {stories.map((story) => (
           <li key={story.id} className="py-5 first:pt-0 last:pb-0">
             <Link href={`/stories/${story.slug}`} className="group grid gap-4 sm:grid-cols-[minmax(0,1fr)_220px]">
               <div>
-                <h2 className="font-serif text-2xl leading-snug text-[color:var(--cream)] group-hover:underline">{story.title}</h2>
+                <h2 className="font-serif text-xl leading-snug text-[color:var(--cream)] group-hover:underline sm:text-2xl">{story.title}</h2>
                 {story.excerpt ? <p className="mt-2 text-sm leading-6 text-[color:var(--muted)]">{story.excerpt}</p> : null}
                 <p className="mt-3 text-xs text-[color:var(--muted)]">{story.author} · {formatDeskDate(story.published_at)}</p>
               </div>
