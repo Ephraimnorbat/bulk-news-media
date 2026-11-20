@@ -167,7 +167,7 @@ export async function HomeDesk() {
             DISTRIBUTION
           </p>
           <p className="mt-2 text-[15px] text-[color:var(--cream)]">Join the official channels</p>
-          <p className="mt-1 font-medium tracking-wide text-[color:var(--cream-dim)]">0710 280 973</p>
+          <p className="mt-1 font-medium tracking-wide text-[color:var(--cream-dim)]">+254 701 916251</p>
           <div className="mt-4 grid grid-cols-2 gap-2">
             <SocialButton
               filled
